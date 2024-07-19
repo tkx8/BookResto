@@ -139,9 +139,9 @@ app.post('/api/login', async (req,res) => {
   });
 
   
-//const photoMiddleware= multer({dest:'/temp'});
-//app.post('/api/upload', photoMiddleware.array('photos',100), async (req, res) => {
-  app.post('/api/upload',async (req, res) => {
+const photoMiddleware= multer({dest:'/temp'});
+app.post('/api/upload', photoMiddleware.array('photos',100), async (req, res) => {
+  
   const uploadedFiles = [];
   for (let i = 0; i < req.files.length; i++) {
       const { path, originalname, mimetype} = req.files[i];
