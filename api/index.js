@@ -52,7 +52,7 @@ async function uploadToS3(path, originalFilename, mimetype) {
 }
 
 
-app.get( '/api/test',(req,res)=>{
+app.get('/api/test',(req,res)=>{
     
     mongoose.connect(process.env.MONGO_URL);
     res.json('test ok');
