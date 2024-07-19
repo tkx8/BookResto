@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"],
+input[type="tel"],
+textarea{
+   @apply w-full border my-1 py-2 px-3 rounded-2xl;
+}
+
+textarea{
+  height:140px;
+}
+button{
+  background: linear-gradient(to right, #e4c989, #b2a077);
+  @apply bg-gray-300;
+}
+
+button.primary{
+  
+  background: linear-gradient(to right, #e4c989, #b2a077);
+  @apply bg-primary p-2 w-full text-white rounded-2xl;
+}
+
+.image-container {
+  width: 192px; 
+  height: 192px; 
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient{
+  background: linear-gradient(to right, #e4c989, #b2a077);
+}
+
+body{
+  background-color: rgb(38, 38, 38);
+}
+
+.bgBlack{
+  background-color: rgb(38, 38, 38);
+}
+
+.textbrown{
+  color: #98694C;
+}
+
+.placeContainer{
+  background-color: #5858585b;
+}
+
+::-webkit-scrollbar{
+  width: 20px;
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to right, #e4c989, #b2a077);
+}
+
+.fish-row {
+  border-bottom: #888888 1px double;
+  border-top: #888888 1px double;
+  height: 6px;
+  width: 100%; max-width: 100%;
+  margin-top: 2em;
+}
+.hellohal {
+  width: 100px; margin: -33px auto 0; 
+  display: block; z-index: 100;
+  opacity: 100;
+}
