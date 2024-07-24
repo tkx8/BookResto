@@ -17,13 +17,33 @@ export default function BookingWidget({place}){
     }
   },[user]);
   async function bookResto() {
-    const response = await axios.post('/bookings', {
-      checkIn,numberOfGuests,name,phone,
-      place:place._id,
+
+    if(user){
+      console.log(user);
+
+      if(checkIn && numberOfGuests && name && phone)
+      {
+        const response = await axios.post('/bookings', {
+          checkIn,numberOfGuests,name,phone,
+          place:place._id,
+          
+        });
+        const bookingId = response.data._id;
+        setRedirect(`/account/bookings/${bookingId}`);
+
+      }
+      else{
+        alert("Veuillez entrer tous les champs");
+      }
       
-    });
-    const bookingId = response.data._id;
-    setRedirect(`/account/bookings/${bookingId}`);
+      
+
+    }
+    else
+    {
+      alert('Veuillez vous connecter en premier');
+    }
+   
   }
 
   if (redirect) {
